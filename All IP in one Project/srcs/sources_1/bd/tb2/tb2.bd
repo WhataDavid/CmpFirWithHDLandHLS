@@ -1,0 +1,432 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x68BDDBD581BFA0E7",
+      "device": "xczu28dr-ffvg1517-1-e",
+      "gen_directory": "../../../../8_7_new_all_ip.gen/sources_1/bd/tb2",
+      "name": "tb2",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2022.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "blk_mem_gen_0": "",
+      "fir_xilinx": "",
+      "bmg_out_with_ena_0": "",
+      "fir_hls": "",
+      "fir_hdl": ""
+    },
+    "ports": {
+      "clk": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "ASSOCIATED_RESET": {
+            "value": "rst"
+          },
+          "CLK_DOMAIN": {
+            "value": "tb2_clk",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "80000000"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000"
+          }
+        },
+        "pfm_attributes": {
+          "CLOCK": "clk {id \"1\" is_default \"false\" proc_sys_reset \"\" status \"fixed\" freq_hz \"50000000\"}"
+        }
+      },
+      "origin_wave": {
+        "type": "data",
+        "direction": "O",
+        "left": "15",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value data} bitwidth {attribs {resolve_type generated dependency bitwidth format long minimum {} maximum {}} value 16} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type generated dependency signed format bool minimum {} maximum {}} value TRUE}}}} DATA_WIDTH 16}",
+            "value_src": "ip_prop"
+          }
+        }
+      },
+      "rst": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_HIGH"
+          }
+        }
+      },
+      "ena": {
+        "direction": "I",
+        "parameters": {
+          "PortType": {
+            "value": "undef",
+            "value_src": "ip_prop"
+          },
+          "PortType.PROP_SRC": {
+            "value": "false",
+            "value_src": "ip_prop"
+          }
+        }
+      },
+      "addra": {
+        "direction": "I",
+        "left": "12",
+        "right": "0"
+      },
+      "fir_xilinx_out": {
+        "direction": "O",
+        "left": "39",
+        "right": "0"
+      },
+      "fir_hdl_out": {
+        "direction": "O",
+        "left": "34",
+        "right": "0"
+      },
+      "fir_hls_out": {
+        "direction": "O",
+        "left": "34",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default_prop"
+          }
+        }
+      }
+    },
+    "components": {
+      "blk_mem_gen_0": {
+        "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
+        "xci_name": "tb2_blk_mem_gen_0_1",
+        "xci_path": "ip/tb2_blk_mem_gen_0_1_1/tb2_blk_mem_gen_0_1.xci",
+        "inst_hier_path": "blk_mem_gen_0",
+        "parameters": {
+          "Coe_File": {
+            "value": "../../../../../../../../8192_data_with_interference.coe"
+          },
+          "Enable_32bit_Address": {
+            "value": "false"
+          },
+          "Enable_A": {
+            "value": "Use_ENA_Pin"
+          },
+          "Load_Init_File": {
+            "value": "true"
+          },
+          "Memory_Type": {
+            "value": "Single_Port_ROM"
+          },
+          "Port_A_Write_Rate": {
+            "value": "0"
+          },
+          "Register_PortA_Output_of_Memory_Primitives": {
+            "value": "false"
+          },
+          "Use_RSTA_Pin": {
+            "value": "false"
+          },
+          "Write_Depth_A": {
+            "value": "8192"
+          },
+          "Write_Width_A": {
+            "value": "16"
+          },
+          "use_bram_block": {
+            "value": "Stand_Alone"
+          }
+        }
+      },
+      "fir_xilinx": {
+        "vlnv": "xilinx.com:ip:fir_compiler:7.2",
+        "xci_name": "tb2_fir_compiler_0_1",
+        "xci_path": "ip/tb2_fir_compiler_0_1_1/tb2_fir_compiler_0_1.xci",
+        "inst_hier_path": "fir_xilinx",
+        "parameters": {
+          "Clock_Frequency": {
+            "value": "80"
+          },
+          "CoefficientSource": {
+            "value": "Vector"
+          },
+          "CoefficientVector": {
+            "value": "-20 ,-50 ,-52 ,-22 ,24 ,62 ,67 ,30 ,-33 ,-88 ,-97 ,-45 ,49 ,131 ,145 ,66 ,-73 ,-193 ,-212 ,-96 ,105 ,278 ,303 ,137 ,-149 ,-390 ,-422 ,-189 ,205 ,534 ,576 ,257 ,-277 ,-718 ,-772 ,-344 ,369 ,957 ,1028 ,457 ,-491 ,-1273 ,-1369 ,-610 ,657 ,1709 ,1846 ,827 ,-897 ,-2357 ,-2573 ,-1168 ,1288 ,3448 ,3855 ,1803 ,-2062 ,-5790 ,-6890 ,-3508 ,4530 ,15364 ,25665 ,31928 ,31928 ,25665 ,15364 ,4530 ,-3508 ,-6890 ,-5790 ,-2062 ,1803 ,3855 ,3448 ,1288 ,-1168 ,-2573 ,-2357 ,-897 ,827 ,1846 ,1709 ,657 ,-610 ,-1369 ,-1273 ,-491 ,457 ,1028 ,957 ,369 ,-344 ,-772 ,-718 ,-277 ,257 ,576 ,534 ,205 ,-189 ,-422 ,-390 ,-149 ,137 ,303 ,278 ,105 ,-96 ,-212 ,-193 ,-73 ,66 ,145 ,131 ,49 ,-45 ,-97 ,-88 ,-33 ,30 ,67 ,62 ,24 ,-22 ,-52 ,-50 ,-20"
+          },
+          "Coefficient_Fanout": {
+            "value": "true"
+          },
+          "Coefficient_File": {
+            "value": "../../../../../../../../matlab/untitled.coe"
+          },
+          "Coefficient_Fractional_Bits": {
+            "value": "0"
+          },
+          "Coefficient_Sets": {
+            "value": "1"
+          },
+          "Coefficient_Sign": {
+            "value": "Signed"
+          },
+          "Coefficient_Structure": {
+            "value": "Inferred"
+          },
+          "Coefficient_Width": {
+            "value": "16"
+          },
+          "ColumnConfig": {
+            "value": "64"
+          },
+          "Control_Broadcast_Fanout": {
+            "value": "true"
+          },
+          "Control_Column_Fanout": {
+            "value": "true"
+          },
+          "Control_LUT_Pipeline": {
+            "value": "true"
+          },
+          "Control_Path_Fanout": {
+            "value": "true"
+          },
+          "Data_Path_Broadcast": {
+            "value": "false"
+          },
+          "Data_Path_Fanout": {
+            "value": "true"
+          },
+          "Data_Width": {
+            "value": "16"
+          },
+          "Disable_Half_Band_Centre_Tap": {
+            "value": "false"
+          },
+          "Filter_Architecture": {
+            "value": "Systolic_Multiply_Accumulate"
+          },
+          "No_BRAM_Read_First_Mode": {
+            "value": "true"
+          },
+          "No_SRL_Attributes": {
+            "value": "false"
+          },
+          "Optimal_Column_Lengths": {
+            "value": "true"
+          },
+          "Optimization_Goal": {
+            "value": "Speed"
+          },
+          "Optimization_List": {
+            "value": "Data_Path_Fanout,Pre-Adder_Pipeline,Coefficient_Fanout,Control_Path_Fanout,Control_Column_Fanout,Control_Broadcast_Fanout,Control_LUT_Pipeline,No_BRAM_Read_First_Mode,Optimal_Column_Lengths,Other"
+          },
+          "Optimization_Selection": {
+            "value": "All"
+          },
+          "Other": {
+            "value": "true"
+          },
+          "Output_Rounding_Mode": {
+            "value": "Full_Precision"
+          },
+          "Output_Width": {
+            "value": "35"
+          },
+          "Pre_Adder_Pipeline": {
+            "value": "true"
+          },
+          "Quantization": {
+            "value": "Integer_Coefficients"
+          },
+          "Sample_Frequency": {
+            "value": "80"
+          }
+        }
+      },
+      "bmg_out_with_ena_0": {
+        "vlnv": "xilinx.com:module_ref:bmg_out_with_ena:1.0",
+        "xci_name": "tb2_bmg_out_with_ena_0_0",
+        "xci_path": "ip/tb2_bmg_out_with_ena_0_0/tb2_bmg_out_with_ena_0_0.xci",
+        "inst_hier_path": "bmg_out_with_ena_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "bmg_out_with_ena",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "source_data": {
+            "direction": "I",
+            "left": "15",
+            "right": "0",
+            "parameters": {
+              "LAYERED_METADATA": {
+                "value": "xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value data} bitwidth {attribs {resolve_type generated dependency bitwidth format long minimum {} maximum {}} value 16} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type generated dependency signed format bool minimum {} maximum {}} value TRUE}}}} DATA_WIDTH 16}",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "ena": {
+            "direction": "I",
+            "parameters": {
+              "PortType": {
+                "value": "undef",
+                "value_src": "ip_prop"
+              },
+              "PortType.PROP_SRC": {
+                "value": "false",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "output_data": {
+            "direction": "O",
+            "left": "15",
+            "right": "0"
+          }
+        }
+      },
+      "fir_hls": {
+        "vlnv": "xilinx.com:hls:fir_hls:1.0",
+        "xci_name": "tb2_fir_hls_1_0",
+        "xci_path": "ip/tb2_fir_hls_1_0/tb2_fir_hls_1_0.xci",
+        "inst_hier_path": "fir_hls"
+      },
+      "fir_hdl": {
+        "vlnv": "xilinx.com:module_ref:fir_hdl:1.0",
+        "xci_name": "tb2_fir_hdl_0_0",
+        "xci_path": "ip/tb2_fir_hdl_0_0/tb2_fir_hdl_0_0.xci",
+        "inst_hier_path": "fir_hdl",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "fir_hdl",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "80000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "user_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "tb2_clk",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_HIGH",
+                "value_src": "user_prop"
+              }
+            }
+          },
+          "filter_in": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "filter_out": {
+            "direction": "O",
+            "left": "34",
+            "right": "0"
+          }
+        }
+      }
+    },
+    "nets": {
+      "addra_1": {
+        "ports": [
+          "addra",
+          "blk_mem_gen_0/addra"
+        ]
+      },
+      "blk_mem_gen_0_douta": {
+        "ports": [
+          "blk_mem_gen_0/douta",
+          "origin_wave",
+          "bmg_out_with_ena_0/source_data"
+        ]
+      },
+      "bmg_out_with_ena_0_output_data": {
+        "ports": [
+          "bmg_out_with_ena_0/output_data",
+          "fir_xilinx/s_axis_data_tdata",
+          "fir_hls/input_data",
+          "fir_hdl/filter_in"
+        ]
+      },
+      "clk_1": {
+        "ports": [
+          "clk",
+          "blk_mem_gen_0/clka",
+          "fir_xilinx/aclk",
+          "fir_hls/ap_clk",
+          "fir_hdl/clk"
+        ]
+      },
+      "ena_1": {
+        "ports": [
+          "ena",
+          "blk_mem_gen_0/ena",
+          "bmg_out_with_ena_0/ena",
+          "fir_xilinx/s_axis_data_tvalid"
+        ]
+      },
+      "fir32hls_0_output_data": {
+        "ports": [
+          "fir_hls/fir_hls_out",
+          "fir_hls_out"
+        ]
+      },
+      "fir_compiler_0_m_axis_data_tdata": {
+        "ports": [
+          "fir_xilinx/m_axis_data_tdata",
+          "fir_xilinx_out"
+        ]
+      },
+      "fir_hdl_0_filter_out": {
+        "ports": [
+          "fir_hdl/filter_out",
+          "fir_hdl_out"
+        ]
+      },
+      "rst_1": {
+        "ports": [
+          "rst",
+          "fir_hls/ap_rst",
+          "fir_hdl/reset"
+        ]
+      }
+    }
+  }
+}

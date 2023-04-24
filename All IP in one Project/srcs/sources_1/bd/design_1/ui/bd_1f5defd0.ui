@@ -1,0 +1,34 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.924242",
+   "Default View_TopLeft":"-304,-2",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
+#  -string -flagsOSRD
+preplace port port-id_clk -pg 1 -lvl 0 -x -10 -y 110 -defaultsOSRD
+preplace port port-id_rst -pg 1 -lvl 0 -x -10 -y 140 -defaultsOSRD
+preplace port port-id_start -pg 1 -lvl 0 -x -10 -y 80 -defaultsOSRD
+preplace portBus addra -pg 1 -lvl 0 -x -10 -y 400 -defaultsOSRD
+preplace portBus hdl_ip_out -pg 1 -lvl 3 -x 660 -y 260 -defaultsOSRD
+preplace portBus hls_ip_out -pg 1 -lvl 3 -x 660 -y 100 -defaultsOSRD
+preplace portBus origin_wave -pg 1 -lvl 3 -x 660 -y 480 -defaultsOSRD
+preplace portBus system_ip_out -pg 1 -lvl 3 -x 660 -y 580 -defaultsOSRD
+preplace inst fir8hdl_0 -pg 1 -lvl 2 -x 420 -y 260 -defaultsOSRD
+preplace inst fir8hls_0 -pg 1 -lvl 2 -x 420 -y 100 -defaultsOSRD
+preplace inst blk_mem_gen_0 -pg 1 -lvl 2 -x 420 -y 410 -defaultsOSRD
+preplace inst fir_compiler_0 -pg 1 -lvl 2 -x 420 -y 600 -defaultsOSRD
+preplace inst xlconstant_0 -pg 1 -lvl 1 -x 90 -y 580 -defaultsOSRD
+preplace netloc addra_1 1 0 2 NJ 400 NJ
+preplace netloc blk_mem_gen_0_douta 1 1 2 200 500 630J
+preplace netloc clk_1 1 0 2 NJ 110 180
+preplace netloc fir8hdl_0_output_data 1 2 1 NJ 260
+preplace netloc fir8hls_0_output_data 1 2 1 NJ 100
+preplace netloc fir_compiler_0_m_axis_data_tdata 1 2 1 630J 580n
+preplace netloc rst_1 1 0 2 NJ 140 190
+preplace netloc start_1 1 0 2 NJ 80 NJ
+preplace netloc xlconstant_0_dout 1 1 1 170J 580n
+levelinfo -pg 1 -10 90 420 660
+pagesize -pg 1 -db -bbox -sgen -140 0 850 700
+"
+}
+0
